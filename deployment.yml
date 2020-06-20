@@ -16,7 +16,7 @@ spec:
       - name: chat-frontend-image
         image: us.icr.io/luccaspace/chat-frontend-image:latest # image we pushed
         ports:
-          - containerPort: 3000
+          - containerPort: 80
         imagePullPolicy: Never
 
           
