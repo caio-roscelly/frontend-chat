@@ -13,10 +13,9 @@ spec:
         app: lucca-chat-frontend-application
     spec:     # pod spec                  
       containers: 
-      - name: lucca-chat-frontend-application
+      - name: chat-frontend-image
         image: us.icr.io/luccaspace/chat-frontend-image:latest # image we pushed
         ports:
           - containerPort: 80
-        imagePullPolicy: Never
 
           
