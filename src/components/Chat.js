@@ -45,13 +45,12 @@ export default class Chat extends Component {
         if(this.state.session_id) objAssistant.session_id = this.state.session_id;
         messageAssistant(objAssistant).then(response=>{
             const result = response.data;
-            console.log(result)
 
             const session_id = result.session_id;
             let conversation = this.state.conversation;
             conversation.push({
                 type: 'bot',
-                text: result.response.result.output.generic
+                text: result.output.generic
             });
 
             this.setState({
