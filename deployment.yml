@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: NAME_APPLICATION
+spec:
+  replicas: 2
+  selector:
+      matchLabels:
+        app: NAME_APPLICATION
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: NAME_APPLICATION
+    spec:     # pod spec                  
+      containers: 
+      - name: NAME_IMAGE
+        image: de.icr.io/NAMESPACE/NAME_IMAGE:latest # image we pushed
+        ports:
+          - containerPort: 80
+
+          
