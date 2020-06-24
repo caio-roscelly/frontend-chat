@@ -19,7 +19,7 @@ export default class Chat extends Component {
         this.sendMessage();
     }
 
-    biddingMessage() {
+    biddingMessage = () => {
         let conversation = this.state.conversation;
 
         if (this.state.textUser.trim() !== '') {
@@ -63,14 +63,13 @@ export default class Chat extends Component {
 
     _handleInput = (e) => {
         const textUser = (e.target.value);
-        console.log(textUser);
         this.setState({ textUser });
     }
 
     _handleKeyDown = (e) => {
         if (e.key === 'Enter') {
             this.biddingMessage();
-        }
+        } 
     }
 
     render() {
@@ -83,7 +82,7 @@ export default class Chat extends Component {
                 </div>
                 <div className="typing">
                     <input value={this.state.textUser} onKeyDown={this._handleKeyDown} onChange={this._handleInput} placeholder="Converse com o Bot" type="text" />
-                    <button>Enviar</button>
+                    <button onClick={this.biddingMessage} >Enviar</button>
                 </div>
             </div>
         )
